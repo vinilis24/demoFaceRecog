@@ -5,7 +5,7 @@ facedetect = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("Trainer.yml")
 
-name_list = ["", "Joshua Vinilis"]
+name_list = ["", "Joshua",  "Vinilis", "Julfadzly"]
 CONFIDENCE_THRESHOLD = 50
 
 def recognize_face(frame, x, y, w, h):
