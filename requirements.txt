@@ -1,2 +1,4 @@
+cvzone==1.6.1
 numpy==1.26.2
 opencv-contrib-python==4.8.1.78
+Pillow==10.1.0
