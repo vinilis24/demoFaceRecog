@@ -31,14 +31,19 @@
 
 ## Image Recognition code
 *NOTE"  Make sure to put the name of the users in the dataset. Sort by ID in an array*
+
 5. Enter any image recognition code, Modify the name_list array. number of array based on the id inside datasets.
-    ```bash 
+``` bash
+    #Input name of users
     name_list = ["", "Joshua",  "Vinilis", "Johnny"]
-    ```
+```
+
 6. Run any facial recognition code, for example default_Main.py
-    ```bash
+``` bash 
+    #Output
     ID: 2 Confidence: 47.35577424898243
     Detected Face - Name: Vinilis
     ID: 0 Confidence: 35.25912327297898
     Detected Face - Name: Unknown
-    ```
+    ...
+```
