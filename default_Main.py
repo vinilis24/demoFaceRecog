@@ -1,4 +1,5 @@
 import cv2
+from time import sleep
 
 video = cv2.VideoCapture(0)
 facedetect = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
@@ -6,7 +7,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read("Trainer.yml")
 
 name_list = ["", "Joshua",  "Vinilis", "Julfadzly"]
-CONFIDENCE_THRESHOLD = 50
+CONFIDENCE_THRESHOLD = 90
 
 def recognize_face(frame, x, y, w, h):
     gray_face = cv2.cvtColor(frame[y:y + h, x:x + w], cv2.COLOR_BGR2GRAY)
@@ -29,6 +30,7 @@ def recognize_face(frame, x, y, w, h):
     cv2.putText(frame, label, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
 
 while True:
+    # sleep(5)
     ret, frame = video.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = facedetect.detectMultiScale(gray, 1.3, 5)
