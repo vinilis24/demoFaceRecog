@@ -59,3 +59,4 @@ Kept a few other ways of coding for facial recognition.
 #extra requirement may needed for code within others folder
 pip install face_recognition
 ```
+## eg. datasets
