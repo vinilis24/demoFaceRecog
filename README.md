@@ -59,3 +59,8 @@ Kept a few other ways of coding for facial recognition.
 #extra requirement may needed for code within others folder
 pip install face_recognition
 ```
+
+## Extra
+```bash
+https://drive.google.com/file/d/1Uo808jFDhK97ae7zPob7KiKHU6pBl2Wv/view?usp=sharing
+```
