@@ -60,3 +60,4 @@ Kept a few other ways of coding for facial recognition.
 pip install face_recognition
 ```
 ## eg. datasets
+https://drive.google.com/file/d/1Uo808jFDhK97ae7zPob7KiKHU6pBl2Wv/view?usp=sharing
