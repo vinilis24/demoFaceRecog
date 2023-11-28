@@ -18,12 +18,17 @@
 ##  Collect image data and build datasets
 *NOTE"  Make sure to have good camera*
 
-3. Run datacollect.py and enter id of the user.
+3. Create a folder named datasets
+    ```bash
+    mkdir datasets
+    ```
+
+4. Run datacollect.py and enter id of the user.
     ```bash
     #This id is to differentiate each users by id in an array list of name inside the main code
     Enter Your ID:
     ```
-4. Run trainingdemo.py to create a yml file to store the trained  data of faces.
+5. Run trainingdemo.py to create a yml file to store the trained  data of faces.
     ```bash 
     #Processing the datasets of a face and turn into yml file
     Training Completed............
@@ -32,7 +37,7 @@
 ## Image Recognition code
 *NOTE"  Make sure to put the name of the users in the dataset. Sort by ID in an array*
 
-5. Enter image recognition code, Modify the name_list array. number of array based on the id inside datasets.
+6. Enter image recognition code, Modify the name_list array. number of array based on the id inside datasets.
 ``` bash
     #Input name of users
     name_list = ["", "Joshua",  "Vinilis", "Johnny"]
