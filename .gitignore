@@ -1,5 +1,6 @@
 datasets/*
 Trainer.yml
 *.mp4
+*.jpg
 env
-arrival_log.csv
+*.csv
