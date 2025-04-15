@@ -5,8 +5,8 @@ import time
 import threading
 
 # Telegram configuration
-CHAT_ID = "-1002539424458"
-bot = telebot.TeleBot("6549359951:AAEZsditszvMfqietyZxA-bSc3awJ7MZooc")  
+CHAT_ID = "your_new_chat_id_here"
+bot = telebot.TeleBot("your_new_bot_token_here")  
 
 # Face detection parameters
 DETECTION_COOLDOWN = 30  # seconds
