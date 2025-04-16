@@ -6,6 +6,56 @@ This project implements a face detection system using OpenCV and sends alerts wi
 
 Follow these steps to set up the environment and run the project:
 
+## How to Get Your Telegram Bot Token and Chat ID
+
+### a. Create a Telegram Bot
+
+1. Open Telegram and search for the **BotFather**.
+2. Start a chat with **BotFather** and send the command `/newbot`.
+3. Follow the instructions to set up your bot. You will receive a **bot token** (e.g., `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`).
+
+### b. Get Your Chat ID
+
+1. Start a chat with your bot by searching for its username in Telegram and sending a message (e.g., "Hello").
+2. Open your browser and navigate to:  
+   `https://api.telegram.org/bot<your-bot-token>/getUpdates`  
+   Replace `<your-bot-token>` with the token you received from **BotFather**.
+3. Look for the `chat` object in the response. Your `id` field in the `chat` object is your **chat ID**.
+
+### Example Response:
+
+```json
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 123456789,
+      "message": {
+        "chat": {
+          "id": -1001234567890,
+          "title": "My Group",
+          "type": "group"
+        },
+        "text": "Hello"
+      }
+    }
+  ]
+}
+```
+
+In this example, the chat ID is `-1001234567890`.
+
+### c. Add the Bot Token and Chat ID to Your Code
+
+1. Open the `.env` file in your project directory.
+2. Add the following lines:
+   ```plaintext
+   TELEGRAM_BOT_TOKEN=123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
+   CHAT_ID=-1001234567890
+   ```
+
+Now your bot is ready to send messages to your chat!
+
 ### 1. Create a Python Virtual Environment
 
 ```bash
