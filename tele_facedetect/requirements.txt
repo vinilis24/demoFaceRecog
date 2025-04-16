@@ -2,3 +2,6 @@ opencv-python
 opencv-python-headless
 numpy
 pyTelegramBotAPI
+face-recognition
+dlib
+dotenv
