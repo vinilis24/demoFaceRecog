@@ -46,8 +46,14 @@ def train_model(dataset_path="datasets", model_path="models/Trainer.yml"):
                 # Optional: Show the image being trained on
                 # cv2.imshow("Training", face_np)
                 # cv2.waitKey(10)
-            except Exception as e:
-                print(f"Error processing {image_path}: {str(e)}")
+            except Image.UnidentifiedImageError as e:
+                print(f"Error: Invalid image format for {image_path}. {str(e)}")
+                continue
+            except ValueError as e:
+                print(f"Error: Unable to parse user ID from filename {image_path}. {str(e)}")
+                continue
+            except IndexError as e:
+                print(f"Error: Unexpected filename structure for {image_path}. {str(e)}")
                 continue
 
         return ids, faces
