@@ -78,13 +78,28 @@ def main_menu():
             print("Running face recognition with Telegram alerts...")
             print("Note: Alerts are sent with a cooldown to prevent spam.")
             
-            # For now, we'll use the basic recognizer and manually add alert logic.
-            # A more advanced integration would be done in a separate module.
+            # Integrate Telegram alerts into the face recognition process.
+            last_alert_time = 0  # Track the last alert time to enforce cooldown
+            cooldown_seconds = 60  # Cooldown period to prevent spam
+
+            def alert_callback(name, confidence):
+                nonlocal last_alert_time
+                current_time = time.time()
+                if current_time - last_alert_time >= cooldown_seconds:
+                    alert_message = f"Face recognized: {name} with confidence {confidence}%"
+                    try:
+                        send_telegram_alert(alert_message)
+                        print(f"Alert sent: {alert_message}")
+                        last_alert_time = current_time
+                    except Exception as e:
+                        print(f"Failed to send Telegram alert: {e}")
+
             recognize_faces(
                 camera_index=camera_index,
                 model_path=model_path,
                 name_list=name_list,
-                confidence_threshold=confidence_threshold
+                confidence_threshold=confidence_threshold,
+                on_recognize=alert_callback  # Pass the alert callback to the recognizer
             )
         
         elif choice == '5':
