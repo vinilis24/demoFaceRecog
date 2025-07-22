@@ -20,7 +20,7 @@ def recognize_faces(camera_index=0, model_path="models/Trainer.yml", name_list=N
         return
 
     # Load the Haar cascade and recognizer
-    facedetect = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+    facedetect = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     
     try:
