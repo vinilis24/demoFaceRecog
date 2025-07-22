@@ -19,7 +19,7 @@ def get_config(section, key, fallback=None, type_cast=str):
             return config.getint(section, key)
         else:
             return config.get(section, key, fallback=fallback)
-    except:
+    except (configparser.NoSectionError, configparser.NoOptionError, ValueError):
         return fallback
 
 def main_menu():
