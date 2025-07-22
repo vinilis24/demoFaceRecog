@@ -23,7 +23,9 @@ def collect_face_data(user_id, camera_index=0, dataset_path="datasets", max_imag
         return
 
     # Load the Haar cascade
-    facedetect = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+    if cascade_path is None:
+        cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+    facedetect = cv2.CascadeClassifier(cascade_path)
     
     count = 0
     print(f"Starting data collection for User ID: {user_id}. Press 'q' to quit early.")
